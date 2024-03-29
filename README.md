@@ -17,8 +17,8 @@ All code was written and tested in version ```Python 3.9```.
 
 # Approach
 I use a two-phase approach to solve the mTSP with battery constraints. 
-1. **mTSP Solver**: I use a Genetic Algorithm to solve the mTSP.
-2. **Battery based Routing**: I will insert the battery constraints into the mTSP solution to find a fitting solution. This part is still using an brute-force approach, but I will try to find a better solution in the future. 
+1. **mTSP Solver**: use a Genetic Algorithm to solve the mTSP.
+2. **Battery based Routing**: insert the charging stations into the mTSP solution to find a fitting solution. This part is currently using an brute-force approach, but I will try to find a better solution in the future. 
 
 # Usage
 To start using the solver, I advise to just run the following command:
