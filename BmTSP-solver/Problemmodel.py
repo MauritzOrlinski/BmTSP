@@ -1,5 +1,6 @@
 battery_consumption = 0.8
 
+
 def battery_cost(a, b):
     return a.dist(b) * battery_consumption
 
@@ -18,6 +19,8 @@ class Point:
         return "Point({}, {})".format(self.x, self.y)
 
     def __eq__(self, other):
+        if other is None or not isinstance(other, Point):
+            return False
         return self.x == other.x and self.y == other.y
 
     def __hash__(self):

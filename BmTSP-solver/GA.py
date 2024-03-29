@@ -25,13 +25,12 @@ class Chromosom:
         self.fitness = 0
         w = include_percent_all_points(self.genes, points)
         if w != 1:
-            self.fitness = time_penalty_skip
-            self.isSolution = False
-            return self.fitness
-        else:
-            self.fitness = needed_time(self.genes)
             self.isSolution = True
+            return 0
+        self.fitness = needed_time(self.genes)
+        self.isSolution = True
         return self.fitness
+
 
     def mutate_in_route(self):
         route_index = random.randint(0, len(self.genes) - 1)

@@ -19,7 +19,6 @@ def remove_charging_stations(gene):
 def insert_closest_charging_stations(gene, charging_stations):
     if battery_underflow(gene) < 0:
         return gene
-    print(len(gene))
     for i in range(len(gene) - 1):
         battery = 100
 
@@ -32,8 +31,6 @@ def insert_closest_charging_stations(gene, charging_stations):
             else:
                 battery = battery_next
             j += 1
-
-
     return gene
 
 
@@ -61,16 +58,16 @@ def needed_time_path(route):
     return time
 
 def needed_time(gene):
-    time = 0
     k = []
     for i in gene:
+        time = 0
         if len(i) == 0:
             continue
         for j in range(len(i) - 1):
             time += i[j].dist(i[j + 1])
         time += i[-1].dist(i[0])
         k.append(time)
-    return max(k)
+    return 0 if len(k) == 0 else max(k)
 
 def closest_charingstation(point, charging_stations):
     return min(charging_stations, key=lambda x: -point.dist(x))
